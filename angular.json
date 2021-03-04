@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "merry-go-round",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "merry-go-round": {
+      "projectType": "application",
+      "root": "apps/merry-go-round",
+      "sourceRoot": "apps/merry-go-round/src",
+      "prefix": "merry-go-round",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/merry-go-round",
+            "index": "apps/merry-go-round/src/index.html",
+            "main": "apps/merry-go-round/src/main.ts",
+            "polyfills": "apps/merry-go-round/src/polyfills.ts",
+            "tsConfig": "apps/merry-go-round/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/merry-go-round/src/favicon.ico",
+              "apps/merry-go-round/src/assets"
+            ],
+            "styles": ["apps/merry-go-round/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/merry-go-round/src/environments/environment.ts",
+                  "with": "apps/merry-go-round/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "merry-go-round:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "merry-go-round:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "merry-go-round:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/merry-go-round/src/**/*.ts",
+              "apps/merry-go-round/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/merry-go-round"],
+          "options": {
+            "jestConfig": "apps/merry-go-round/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "merry-go-round-e2e": {
+      "root": "apps/merry-go-round-e2e",
+      "sourceRoot": "apps/merry-go-round-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/merry-go-round-e2e/cypress.json",
+            "tsConfig": "apps/merry-go-round-e2e/tsconfig.e2e.json",
+            "devServerTarget": "merry-go-round:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "merry-go-round:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/merry-go-round-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
