@@ -51,7 +51,10 @@
               "apps/merry-go-round/src/favicon.ico",
               "apps/merry-go-round/src/assets"
             ],
-            "styles": ["apps/merry-go-round/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/merry-go-round/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -142,6 +145,156 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/merry-go-round-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "material": {
+      "projectType": "library",
+      "root": "libs/material",
+      "sourceRoot": "libs/material/src",
+      "prefix": "app",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/material/src/**/*.ts",
+              "libs/material/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/material"],
+          "options": {
+            "jestConfig": "libs/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-data": {
+      "projectType": "library",
+      "root": "libs/core-data",
+      "sourceRoot": "libs/core-data/src",
+      "prefix": "merry-go-round",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core-data/src/**/*.ts",
+              "libs/core-data/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core-data"],
+          "options": {
+            "jestConfig": "libs/core-data/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-header": {
+      "projectType": "library",
+      "root": "libs/ui-header",
+      "sourceRoot": "libs/ui-header/src",
+      "prefix": "ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-header/src/**/*.ts",
+              "libs/ui-header/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-header"],
+          "options": {
+            "jestConfig": "libs/ui-header/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-navbar": {
+      "projectType": "library",
+      "root": "libs/ui-navbar",
+      "sourceRoot": "libs/ui-navbar/src",
+      "prefix": "ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-navbar/src/**/*.ts",
+              "libs/ui-navbar/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-navbar"],
+          "options": {
+            "jestConfig": "libs/ui-navbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-menu": {
+      "projectType": "library",
+      "root": "libs/ui-menu",
+      "sourceRoot": "libs/ui-menu/src",
+      "prefix": "ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-menu/src/**/*.ts",
+              "libs/ui-menu/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-menu"],
+          "options": {
+            "jestConfig": "libs/ui-menu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-profile": {
+      "projectType": "library",
+      "root": "libs/ui-profile",
+      "sourceRoot": "libs/ui-profile/src",
+      "prefix": "ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-profile/src/**/*.ts",
+              "libs/ui-profile/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-profile"],
+          "options": {
+            "jestConfig": "libs/ui-profile/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@merry-go-round/material": ["libs/material/src/index.ts"],
+      "@merry-go-round/core-data": ["libs/core-data/src/index.ts"],
+      "@merry-go-round/ui-header": ["libs/ui-header/src/index.ts"],
+      "@merry-go-round/ui-navbar": ["libs/ui-navbar/src/index.ts"],
+      "@merry-go-round/ui-menu": ["libs/ui-menu/src/index.ts"],
+      "@merry-go-round/ui-profile": ["libs/ui-profile/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
