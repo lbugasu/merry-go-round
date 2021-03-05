@@ -26,6 +26,7 @@
     "ui-header": { "tags": [] },
     "ui-navbar": { "tags": [] },
     "ui-menu": { "tags": [] },
-    "ui-profile": { "tags": [] }
+    "ui-profile": { "tags": [] },
+    "api": { "tags": [] }
   }
 }

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing.module';
-const routes: Routes = [];
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,7 +15,6 @@ const routes: Routes = [];
     MaterialModule,
     HomeModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],

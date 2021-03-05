@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/ui-navbar',
     '<rootDir>/libs/ui-menu',
     '<rootDir>/libs/ui-profile',
+    '<rootDir>/apps/api',
   ],
 };

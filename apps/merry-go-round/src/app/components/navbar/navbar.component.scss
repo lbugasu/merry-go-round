@@ -1,0 +1,34 @@
+div.menu-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 6vh;
+  div.routes {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    // display: inline-block;
+    h2 {
+      padding-right: 3%;
+    }
+  }
+  div.tickets {
+    width: 20%;
+    display: inline-block;
+    text-align: right;
+  }
+  div.buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+
+    merry-go-round-button {
+      display: inline-block;
+      justify-self: flex-end;
+    }
+  }
+
+  padding-bottom: 0.75%;
+  border-bottom: 2px solid var(--primary);
+}

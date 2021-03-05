@@ -1,0 +1,12 @@
+div {
+  border-radius: 25px;
+  width: 150px;
+  height: 50px;
+  h4 {
+    color: var(--tertiary);
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--red);
+}
