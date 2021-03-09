@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+// Css Reset
+@import "style/reset";
+
+// Import fonts Stylesheet
+@import "style/fonts";
+
+// import palette stylesheet
+@import "style/palette";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: var(--primary);
+}
