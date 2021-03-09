@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Material } from 'src/libs';
+import { GeneralHeaderComponent } from './general-header/general-header.component';
 import { PaletteComponent } from './palette/palette.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
@@ -16,6 +17,7 @@ import { YourItemComponent } from './your-item/your-item.component';
     UserListComponent,
     ProfileComponent,
     PaletteComponent,
+    GeneralHeaderComponent,
   ],
   imports: [CommonModule, Material],
   exports: [
@@ -25,6 +27,7 @@ import { YourItemComponent } from './your-item/your-item.component';
     UserListComponent,
     ProfileComponent,
     PaletteComponent,
+    GeneralHeaderComponent,
   ],
 })
 export class ComponentsModule {}

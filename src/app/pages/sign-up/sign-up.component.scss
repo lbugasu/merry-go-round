@@ -1,0 +1,20 @@
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+div.fillForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  mat-horizontal-stepper {
+    width: 60%;
+  }
+}
+input {
+  border-bottom: 1px solid var(--primary);
+}
