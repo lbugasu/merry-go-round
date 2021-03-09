@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="push">
+    <mat-card>
+      <profile></profile>
+    </mat-card>
+    <palette></palette>
+    <div class="logout_btn">
+      <button mat-raised-button color="accent" class="logout_btn">
+        Log Out
+      </button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar>
+      <button
+        mat-mini-fab
+        color="#f4a261"
+        background-color="red"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>MERRY GO ROUND</h1>
+    </mat-toolbar>
+
+    <product-list></product-list>
+  </mat-drawer-content>
+</mat-drawer-container>
