@@ -20,14 +20,14 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
-    path: '*',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];
 @NgModule({
