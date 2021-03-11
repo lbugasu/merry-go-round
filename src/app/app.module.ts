@@ -9,8 +9,11 @@ import { Material } from 'src/libs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
+import { GraphQLModule } from './graphql.module';
 import { HomeComponent } from './pages/home/home.component';
-import { GraphQLModule } from './services/graphql/graphql.module';
+import { AuthService } from './services/auth.service';
+import { BidService } from './services/bid.service';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, SignInComponent, SignUpComponent],
@@ -21,11 +24,11 @@ import { GraphQLModule } from './services/graphql/graphql.module';
     BrowserAnimationsModule,
     ComponentsModule,
     ReactiveFormsModule,
-    GraphQLModule,
     HttpClientModule,
+    GraphQLModule,
   ],
   exports: [Material],
-  providers: [],
+  providers: [AuthService, ProductService, BidService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

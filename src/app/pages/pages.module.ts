@@ -5,6 +5,10 @@ import { ProductListComponent } from '../components/product-list/product-list.co
 import { ProductComponent } from '../components/product/product.component';
 import { UserListComponent } from '../components/user-list/user-list.component';
 import { YourItemComponent } from '../components/your-item/your-item.component';
+import { AuthService } from '../services/auth.service';
+import { BidService } from '../services/bid.service';
+import { ProductService } from '../services/product.service';
+import { GraphQLModule } from './../graphql.module';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -22,7 +26,8 @@ import { UsersComponent } from './users/users.component';
     UsersComponent,
     AdminComponent,
   ],
-  imports: [CommonModule, Material],
-  exports: [Material],
+  providers: [AuthService, ProductService, BidService],
+  imports: [CommonModule, Material, GraphQLModule],
+  exports: [Material, GraphQLModule],
 })
 export class PagesModule {}

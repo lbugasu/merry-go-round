@@ -6,17 +6,11 @@ User Mutations
   3. signout
 
 Product
-  Queries
-    1. getProducts
   Mutatiions
     1. addProduct
     2. award
 
 Bid
-  Queries
-    1. getBids() - returns all the bids
-    2. TODO: getUserBids() returns all a user's bids.
-    3. TODO: getProductBids() - retuns the bids on a product.
   Mutations
     1. makeBid - when a user makes a bid
     2. changeBid - when a user changes a bid.
@@ -27,8 +21,8 @@ Bid
 /**
  * Sign up Mutation - returns a JWT
  */
-export const SIGN_UP = gql`
-  mutation signUp($user: User) {
+export const SIGN_UP = `
+  mutation SignUp($user: UserInput!) {
     signup(user: $user)
   }
 `;
@@ -63,10 +57,39 @@ export const ADD_PRODUCT = gql`
 
 export const AWARD = gql``;
 
-export const MAKE_BID = gql``;
+export const MAKE_BID = gql`
+  mutation MakeBid($bid: Bid) {
+    mutation
+    makeBid(bid: $bid) {
+      productId
+      tickets
+      user
+    }
+  }
+`;
 
-export const CHANGE_BID = gql``;
+export const CHANGE_BID = gql`
+  mutation ChangeBid($bid: Bid) {
+    mutation
+    changeBid(bid: $bid) {
+      productId
+      tickets
+      user
+    }
+  }
+`;
 
-export const DELETE_BID = gql``;
+TODO: 'There are other references that need to be deleted';
+export const DELETE_BID = gql`
+  mutation deleteBid($bid: Bid) {
+    mutation
+    deleteBid(bid: $bid) {
+      productId
+      tickets
+      user
+    }
+  }
+`;
 
+TODO: 'Implement this';
 export const STOP_BIDDING = gql``;
