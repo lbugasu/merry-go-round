@@ -4,8 +4,12 @@
     <h2>Sign Up</h2>
     <div class="fillForm">
       <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-        <input matInput placeholder="username" />
+        <input type="text" matInput placeholder="username" />
       </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input placeholder="email" type="email" matInput />
+      </mat-form-field>
+
       <mat-form-field appearance="fill">
         <!-- <mat-label>Enter your password</mat-label> -->
         <input
@@ -22,6 +26,7 @@
         >
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
+        <mat-hint>At least 6 characters</mat-hint>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <!-- <mat-label>Enter your password</mat-label> -->
@@ -40,6 +45,7 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
+      <button mat-raised-button class="done">Continue</button>
     </div>
   </div>
 </div>

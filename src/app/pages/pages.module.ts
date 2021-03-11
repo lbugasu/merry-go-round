@@ -5,15 +5,13 @@ import { ProductListComponent } from '../components/product-list/product-list.co
 import { ProductComponent } from '../components/product/product.component';
 import { UserListComponent } from '../components/user-list/user-list.component';
 import { YourItemComponent } from '../components/your-item/your-item.component';
+import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UsersComponent } from './users/users.component';
-import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
-    LoginComponent,
     SignUpComponent,
     HomeComponent,
     SignInComponent,

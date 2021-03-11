@@ -16,11 +16,11 @@ div.content {
 
 div.fillForm {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-around;
+  // align-items: center;
   height: 40vh;
   flex-direction: column;
-  align-content: center;
+  align-content: flex-start;
   input {
     border-bottom: 1px solid var(--primary);
   }
@@ -28,4 +28,15 @@ div.fillForm {
     display: block;
     // height: 8vh;
   }
+}
+button.done {
+  padding: 2%;
+  margin: 0 5% 0 5%;
+  background-color: var(--bluish);
+  font-size: 100%;
+}
+mat-hint {
+  color: var(--gray);
+  font-size: 75%;
+  text-align: left;
 }
