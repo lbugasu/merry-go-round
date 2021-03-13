@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
-import { User } from './graphql/types';
-
+import { Credentials, User } from '../types';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class AuthService {
   constructor(private apollo: Apollo) {}
   /**
    *
@@ -20,6 +19,21 @@ export class ApiService {
         }
       `,
       variables: { user },
+    });
+  }
+
+  signOut() {
+    TODO: 'Delete token from local storage';
+  }
+
+  signIn(credentials: Credentials) {
+    return this.apollo.mutate({
+      mutation: gql`
+        mutation SignIn($credentials: Credentials) {
+          signin(credentials: $credentials)
+        }
+      `,
+      variables: { credentials },
     });
   }
 }

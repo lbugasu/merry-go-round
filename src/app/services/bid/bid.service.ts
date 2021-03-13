@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
-import { Bid } from './graphql/types';
+import { Bid } from '../types';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +30,7 @@ export class BidService {
         mutation ChangeBid($bid: Bid) {
           mutation
           changeBid(bid: $bid) {
+            _id
             productId
             tickets
             user
@@ -46,6 +47,7 @@ export class BidService {
         mutation deleteBid($bid: Bid) {
           mutation
           deleteBid(bid: $bid) {
+            _id
             productId
             tickets
             user
@@ -56,9 +58,37 @@ export class BidService {
     });
   }
 
+  getUserBids(username: string) {
+    return this.apollo.watchQuery({
+      query: gql`
+        query GetUserBids($username: String) {
+          getUserBid(username: $username) {
+            _id
+            productId
+            tickets
+            user
+          }
+        }
+      `,
+      variables: { username: username },
+    });
+  }
+
+  getProductBids(productId: string) {
+    return this.apollo.watchQuery({
+      query: gql`
+        query GetProductBids($productId: String) {
+          getProductBid(productId: $productId) {
+            _id
+            productId
+            tickets
+            user
+          }
+        }
+      `,
+      variables: { productId: productId },
+    });
+  }
+
   stopBidding() {}
-
-  getUserBids() {}
-
-  getProductBids() {}
 }

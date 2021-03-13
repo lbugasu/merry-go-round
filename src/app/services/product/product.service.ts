@@ -21,4 +21,21 @@ export class ProductService {
       `,
     });
   }
+
+  award(productId: string, username: string) {
+    return this.apollo.mutate({
+      mutation: gql`
+        mutation: Award($productId: String, $username: String){
+          award(productId: $productId, username: $username){
+            _id
+            name
+            awardee
+            photo
+            owner
+          }
+        }
+      `,
+      variables: { productId: productId, username: username },
+    });
+  }
 }

@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
-  options: FormGroup;
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto');
-  // For the password
+  forms: FormGroup;
   hide = true;
-  constructor(fb: FormBuilder, private authService: AuthService) {
-    this.options = fb.group({
-      hideRequired: this.hideRequiredControl,
-      floatLabel: this.floatLabelControl,
+  constructor(private authService: AuthService) {
+    this.forms = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
     });
   }
 
@@ -30,4 +30,6 @@ export class SignUpComponent implements OnInit {
     };
     this.authService.signUp(user).subscribe(({ data }) => console.log(data));
   }
+
+  signUp() {}
 }

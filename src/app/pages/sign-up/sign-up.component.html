@@ -3,16 +3,27 @@
   <div class="area">
     <h2>Sign Up</h2>
     <div class="fillForm">
-      <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-        <input type="text" matInput placeholder="username" />
+      <mat-form-field appearance="fill">
+        <input
+          formControlName="username"
+          type="text"
+          matInput
+          placeholder="username"
+        />
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <input placeholder="email" type="email" matInput />
+        <input
+          formControlName="email"
+          placeholder="email"
+          type="email"
+          matInput
+        />
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <!-- <mat-label>Enter your password</mat-label> -->
         <input
+          formControlName="password"
           placeholder="password"
           matInput
           [type]="hide ? 'password' : 'text'"
@@ -31,6 +42,7 @@
       <mat-form-field appearance="fill">
         <!-- <mat-label>Enter your password</mat-label> -->
         <input
+          formControlName="password"
           placeholder="confirm password"
           matInput
           [type]="hide ? 'password' : 'text'"
@@ -45,7 +57,6 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
-      <button mat-raised-button class="done">Continue</button>
     </div>
   </div>
 </div>
