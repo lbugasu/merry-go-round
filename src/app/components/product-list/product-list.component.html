@@ -1,15 +1,38 @@
-<div class="menu-bar">
-  <div class="routes">
-    <h2 class="selected">Items</h2>
-    <h2 [ngStyle]="{ visibility: selected === 'users' ? 'visible' : 'hidden' }">
-      Users
-    </h2>
-    <h2>Draw</h2>
-  </div>
-  <div class="tickets">
-    <h3>Tickets: 0</h3>
-  </div>
-  <div class="buttons">
-    <button mat-raised-button color="red">End Bidding</button>
-  </div>
+<div>
+  <mat-card *ngFor="let product of products">
+    <mat-card-content>
+      <div class="product__frame">
+        <div class="product">
+          <div class="product__image">
+            <img src="{{ product.photo }}" />
+          </div>
+          <h2>
+            {{ product.name }}
+          </h2>
+        </div>
+        <div class="product__details">
+          <div class="no__bids">no bids</div>
+          <div class="average__bids">average bids</div>
+          <div class="product__winner">winner</div>
+        </div>
+      </div>
+      <div class="secondary">
+        <div class="bid__area">
+          <div class="actions">
+            <mat-icon>add_circle_outline</mat-icon>
+            <mat-icon>remove_circle_outline</mat-icon>
+          </div>
+          <h3>0</h3>
+          <mat-chip
+            style="background-color: var(--green); color: var(--white)"
+            selected
+            >Place bid</mat-chip
+          >
+        </div>
+        <div class="more__actions">
+          <mat-icon style="color: var(--like)">favorite_border</mat-icon>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

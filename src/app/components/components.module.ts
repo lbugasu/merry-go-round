@@ -6,6 +6,7 @@ import { PaletteComponent } from './palette/palette.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SecondaryHeaderComponent } from './secondary-header/secondary-header.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { YourItemComponent } from './your-item/your-item.component';
 
@@ -18,6 +19,7 @@ import { YourItemComponent } from './your-item/your-item.component';
     ProfileComponent,
     PaletteComponent,
     GeneralHeaderComponent,
+    SecondaryHeaderComponent,
   ],
   imports: [CommonModule, Material],
   exports: [
@@ -28,6 +30,7 @@ import { YourItemComponent } from './your-item/your-item.component';
     ProfileComponent,
     PaletteComponent,
     GeneralHeaderComponent,
+    SecondaryHeaderComponent,
   ],
 })
 export class ComponentsModule {}

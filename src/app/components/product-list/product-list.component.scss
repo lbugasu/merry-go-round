@@ -1,42 +1,88 @@
-div.menu-bar {
-  margin: 1% 2% 1% 2%;
+mat-card-content {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  height: 6vh;
-
-  padding-bottom: 0.75%;
-  border-bottom: 2px solid var(--primary);
-
+  justify-content: space-around;
+}
+div.product__frame {
+  width: 60%;
+  display: inline-block;
+  border: 1px solid black;
+  display: flex;
+}
+div.product {
+  width: 60%;
+  display: inline-block;
+  border-right: 1px solid black;
+  img {
+    width: 100%;
+  }
   h2 {
-    color: var(--gray);
+    text-align: center;
   }
-  h2.selected {
-    color: var(--primary);
+}
+div.product__details {
+  width: 40%;
+  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  div.average__bids,
+  div.no__bids {
+    height: 25%;
+    border-bottom: 1px solid black;
+    width: 100%;
+    flex: 1;
   }
-  div.routes {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 40%;
-    // display: inline-block;
-    h2 {
-      padding-right: 3%;
+  div.product__winner {
+    height: 50%;
+    flex: 2;
+  }
+}
+
+div.secondary {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+
+  div.bid__area {
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    // padding: 2.5%;
+    height: 60%;
+
+    h3 {
+      text-align: center;
+      padding: 5%;
+      font-size: 175%;
+    }
+    div.actions {
+      display: flex;
+      justify-content: center;
+
+      mat-icon {
+        font-size: 30px;
+        display: inline-block;
+        width: 50%;
+        height: 30%;
+        text-align: center;
+      }
+    }
+    mat-chip {
+      width: fit-content;
+      padding: 3% 5% 2% 5%;
+      border-radius: 20pt;
+      align-self: center;
     }
   }
-  div.tickets {
-    width: 20%;
-    display: inline-block;
-    text-align: right;
-  }
-  div.buttons {
+  div.more__actions {
+    height: 30%;
     display: flex;
-    justify-content: flex-end;
-    width: 40%;
-
-    button.mat-raised-button {
-      background-color: var(--red);
-      color: white;
+    align-items: center;
+    mat-icon {
+      font-size: 30pt;
     }
   }
 }
