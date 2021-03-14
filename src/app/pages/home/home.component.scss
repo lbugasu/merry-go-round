@@ -1,8 +1,5 @@
-.example-container {
-  width: 100vw;
+mat-drawer-container.container {
   min-height: 100vh;
-  //   margin: 12px;
-  border: 1px solid #555;
 }
 mat-drawer {
   width: 20vw;
@@ -36,6 +33,7 @@ mat-toolbar {
 h1 {
   text-align: center;
   color: var(--tertiary);
+  margin-right: 3%;
 }
 .example-label {
   display: table-cell;
@@ -67,6 +65,21 @@ h1 {
 mat-drawer-content {
   width: 100%;
 }
-product-list {
+div.content {
+  display: flex;
   width: 100%;
+  div.product {
+    width: 80%;
+
+    secondary-header {
+      width: 100%;
+    }
+    product-list {
+      width: 60%;
+      display: inline-block;
+    }
+  }
+  div.user {
+    width: 10%;
+  }
 }

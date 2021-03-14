@@ -9,10 +9,11 @@
           <h2>
             {{ product.name }}
           </h2>
+          <p>{{ product.description }}</p>
         </div>
         <div class="product__details">
           <div class="no__bids">no bids</div>
-          <div class="average__bids">average bids</div>
+          <div class="average__bids">average bid</div>
           <div class="product__winner">winner</div>
         </div>
       </div>
@@ -20,17 +21,19 @@
         <div class="bid__area">
           <div class="actions">
             <mat-icon>add_circle_outline</mat-icon>
+            <h3>0</h3>
             <mat-icon>remove_circle_outline</mat-icon>
           </div>
-          <h3>0</h3>
-          <mat-chip
+
+          <button
             style="background-color: var(--green); color: var(--white)"
-            selected
-            >Place bid</mat-chip
+            mat-raised-button
           >
+            Place bid
+          </button>
         </div>
         <div class="more__actions">
-          <mat-icon style="color: var(--like)">favorite_border</mat-icon>
+          <mat-icon style="color: var(--like)">favorite</mat-icon>
         </div>
       </div>
     </mat-card-content>

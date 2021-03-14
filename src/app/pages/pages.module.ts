@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ProductListComponent } from '../components/product-list/product-list.component';
 import { ProductComponent } from '../components/product/product.component';
+import { SecondaryHeaderComponent } from '../components/secondary-header/secondary-header.component';
 import { UserListComponent } from '../components/user-list/user-list.component';
 import { YourItemComponent } from '../components/your-item/your-item.component';
 import { AuthService } from '../services/auth/auth.service';
@@ -24,6 +25,7 @@ import { UsersComponent } from './users/users.component';
     UserListComponent,
     UsersComponent,
     AdminComponent,
+    SecondaryHeaderComponent,
   ],
   providers: [AuthService, ProductService, BidService],
   imports: [CommonModule, GraphQLModule],

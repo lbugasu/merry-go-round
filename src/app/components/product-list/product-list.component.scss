@@ -5,15 +5,15 @@ mat-card-content {
 div.product__frame {
   width: 60%;
   display: inline-block;
-  border: 1px solid black;
+  border: 3px solid black;
   display: flex;
 }
 div.product {
   width: 60%;
   display: inline-block;
-  border-right: 1px solid black;
+  border-right: 2px solid black;
   img {
-    width: 100%;
+    width: 60%;
   }
   h2 {
     text-align: center;
@@ -46,16 +46,16 @@ div.secondary {
 
   div.bid__area {
     display: flex;
-    border: 1px solid black;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
-    // padding: 2.5%;
-    height: 60%;
+    padding: 5%;
+    height: 50%;
+    border: 2px solid black;
 
     h3 {
       text-align: center;
-      padding: 5%;
+      // padding: 5%;
       font-size: 175%;
     }
     div.actions {
@@ -66,15 +66,14 @@ div.secondary {
         font-size: 30px;
         display: inline-block;
         width: 50%;
-        height: 30%;
+        height: 40%;
         text-align: center;
       }
     }
-    mat-chip {
+    button {
       width: fit-content;
-      padding: 3% 5% 2% 5%;
-      border-radius: 20pt;
       align-self: center;
+      border-radius: 20px;
     }
   }
   div.more__actions {
