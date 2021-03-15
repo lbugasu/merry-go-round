@@ -16,6 +16,7 @@ export class ProductService {
             name
             description
             photo
+            owner
           }
         }
       `,

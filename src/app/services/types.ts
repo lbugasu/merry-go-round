@@ -4,9 +4,8 @@ export interface User {
   password: string;
 }
 
-export interface Credentials {
-  username: string;
-  password: string;
+export class Credentials {
+  constructor(private username: string, private password: string) {}
 }
 
 export interface Product {

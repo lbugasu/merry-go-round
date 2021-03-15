@@ -12,6 +12,8 @@ export class AuthService {
    * @returns an observable
    */
   signUp(user: User) {
+    console.log(user);
+
     return this.apollo.mutate({
       mutation: gql`
         mutation SignUp($user: UserInput!) {
@@ -27,9 +29,10 @@ export class AuthService {
   }
 
   signIn(credentials: Credentials) {
+    console.log(credentials);
     return this.apollo.mutate({
       mutation: gql`
-        mutation SignIn($credentials: Credentials) {
+        mutation SignIn($credentials: Credentials!) {
           signin(credentials: $credentials)
         }
       `,
