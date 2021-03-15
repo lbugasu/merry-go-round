@@ -1,36 +1,55 @@
+mat-card {
+  margin-bottom: 2%;
+}
 mat-card-content {
   display: flex;
   justify-content: space-around;
 }
 div.product__frame {
-  width: 60%;
+  width: 75%;
   display: inline-block;
-  border: 3px solid black;
+  border-right: 1px solid black;
   display: flex;
 }
 div.product {
-  width: 60%;
-  display: inline-block;
-  border-right: 2px solid black;
+  width: 80%;
+  display: inline-flex;
+
   img {
     width: 60%;
   }
   h2 {
-    text-align: center;
+    text-align: left;
+  }
+  div.product__description {
+    margin: 2.5%;
   }
 }
+div.more__actions {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  mat-icon {
+    font-size: 25pt;
+  }
+  border-right: 1px solid black;
+  margin-right: 5%;
+}
 div.product__details {
-  width: 40%;
+  width: 30%;
   display: inline-block;
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
   height: 100%;
+  margin-right: 5%;
+
   div.average__bids,
   div.no__bids {
     height: 25%;
     border-bottom: 1px solid black;
-    width: 100%;
+    width: 95%;
     flex: 1;
   }
   div.product__winner {
@@ -40,7 +59,7 @@ div.product__details {
 }
 
 div.secondary {
-  width: 30%;
+  width: 25%;
   display: flex;
   flex-direction: column;
 
@@ -50,8 +69,8 @@ div.secondary {
     justify-content: center;
     align-content: space-around;
     padding: 5%;
-    height: 50%;
-    border: 2px solid black;
+    height: 100%;
+    // border: 1px solid black;
 
     h3 {
       text-align: center;
@@ -66,7 +85,7 @@ div.secondary {
         font-size: 30px;
         display: inline-block;
         width: 50%;
-        height: 40%;
+        // height: 40%;
         text-align: center;
       }
     }
@@ -76,12 +95,7 @@ div.secondary {
       border-radius: 20px;
     }
   }
-  div.more__actions {
-    height: 30%;
-    display: flex;
-    align-items: center;
-    mat-icon {
-      font-size: 30pt;
-    }
-  }
+}
+p.em {
+  font-style: italic;
 }

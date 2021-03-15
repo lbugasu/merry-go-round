@@ -3,18 +3,22 @@
     <mat-card-content>
       <div class="product__frame">
         <div class="product">
-          <div class="product__image">
-            <img src="{{ product.photo }}" />
+          <div class="product__description">
+            <h2>
+              {{ product.name }}
+            </h2>
+            <p class="em">from {{ product.owner }}</p>
+            <p>{{ product.description }}</p>
+            <!-- <img src="{{ product.photo }}" /> -->
           </div>
-          <h2>
-            {{ product.name }}
-          </h2>
-          <p>{{ product.description }}</p>
+        </div>
+        <div class="more__actions">
+          <mat-icon style="color: var(--grey)">favorite</mat-icon>
         </div>
         <div class="product__details">
-          <div class="no__bids">no bids</div>
-          <div class="average__bids">average bid</div>
-          <div class="product__winner">winner</div>
+          <div class="no__bids">bids: 0</div>
+          <div class="average__bids">avg bid: 2tckts</div>
+          <div class="product__winner">winner: TBD</div>
         </div>
       </div>
       <div class="secondary">
@@ -31,9 +35,6 @@
           >
             Place bid
           </button>
-        </div>
-        <div class="more__actions">
-          <mat-icon style="color: var(--like)">favorite</mat-icon>
         </div>
       </div>
     </mat-card-content>

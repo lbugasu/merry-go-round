@@ -5,7 +5,7 @@ div.content {
   align-items: center;
   div.area {
     width: fit-content;
-    border: 1px solid black;
+    // border: 1px solid black;
     h2 {
       margin-top: 10%;
       text-align: center;
@@ -21,9 +21,7 @@ div.fillForm {
   height: 40vh;
   flex-direction: column;
   align-content: flex-start;
-  input {
-    border-bottom: 1px solid var(--primary);
-  }
+
   mat-form-field {
     display: block;
     // height: 8vh;
@@ -39,4 +37,9 @@ mat-hint {
   color: var(--gray);
   font-size: 75%;
   text-align: left;
+}
+button.signUpBtn {
+  align-self: center;
+  background-color: #44bba4;
+  color: #393e41;
 }

@@ -2,12 +2,13 @@
 <div class="content">
   <div class="area">
     <h2>Sign In</h2>
-    <div class="fillForm">
+    <div class="fillForm" [formGroup]="form">
       <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
-        <input matInput placeholder="username" />
+        <input formControlName="username" matInput placeholder="username" />
       </mat-form-field>
       <mat-form-field appearance="fill">
         <input
+          formControlName="password"
           placeholder="password"
           matInput
           [type]="hide ? 'password' : 'text'"
@@ -22,6 +23,9 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
+      <button (click)="submit()" class="signUpBtn" mat-stroked-button>
+        sign in
+      </button>
     </div>
   </div>
 </div>

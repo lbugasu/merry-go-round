@@ -2,26 +2,29 @@
 <div class="content">
   <div class="area">
     <h2>Sign Up</h2>
-    <div class="fillForm">
+    <div class="fillForm" [formGroup]="forms">
       <mat-form-field appearance="fill">
+        <mat-label>Enter your Username</mat-label>
+
         <input
           formControlName="username"
           type="text"
           matInput
-          placeholder="username"
+          placeholder="dwaynejohnson"
         />
       </mat-form-field>
       <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
         <input
           formControlName="email"
-          placeholder="email"
+          placeholder="dwayne@therock.co"
           type="email"
           matInput
         />
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <!-- <mat-label>Enter your password</mat-label> -->
+        <mat-label>Enter your password</mat-label>
         <input
           formControlName="password"
           placeholder="password"
@@ -40,7 +43,7 @@
         <mat-hint>At least 6 characters</mat-hint>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <!-- <mat-label>Enter your password</mat-label> -->
+        <mat-label>Confirm your password</mat-label>
         <input
           formControlName="password"
           placeholder="confirm password"
@@ -57,6 +60,9 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
+      <button (click)="signUp()" class="signUpBtn" mat-stroked-button>
+        Finish
+      </button>
     </div>
   </div>
 </div>
