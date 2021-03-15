@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
-import { WebSocketLink } from '@apollo/client/link/ws';
 import { APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 
@@ -13,11 +12,6 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     cache: new InMemoryCache(),
   };
 }
-
-export const wsLink = new WebSocketLink({
-  uri: subsUri,
-  options: { reconnect: true },
-});
 
 // const httpLink = new HttpLink({uri: uri})
 @NgModule({
